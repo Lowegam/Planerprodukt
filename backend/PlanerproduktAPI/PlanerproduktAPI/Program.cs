@@ -5,8 +5,6 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using PlanerproduktAPI.Data;
 using PlanerproduktAPI.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +40,6 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
