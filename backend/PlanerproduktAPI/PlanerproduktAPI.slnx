@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../PlanerproduktAPI.Tests/PlanerproduktAPI.Tests.csproj" Id="7f4e4935-b5df-41bf-94d7-7ecd4020d6d7" />
   <Project Path="PlanerproduktAPI/PlanerproduktAPI.csproj" />
 </Solution>

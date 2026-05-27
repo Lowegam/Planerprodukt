@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using PlanerproduktAPI.Data;
 using PlanerproduktAPI.Models;
+using PlanerproduktAPI.Services;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +17,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "DomyslnyKlucz123!@#";
-var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "PlanerproduktAPI";
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "DomyslnyKlucz123456789!@#$%^&*()"; var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "PlanerproduktAPI";
 var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "PlanerproduktClients";
 
 builder.Services.AddAuthentication(options =>
@@ -48,6 +49,7 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
+builder.Services.AddHostedService<NotificationService>();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
