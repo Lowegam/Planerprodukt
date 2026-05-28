@@ -1,1 +1,16 @@
-<p>task-detail works!</p>
+<div *ngIf="task; else loading" style="max-width:500px;margin:30px auto;padding:20px;">
+  <mat-card>
+    <mat-card-title>{{task.title}}</mat-card-title>
+    <mat-card-content>
+      <p><b>Opis:</b> {{task.description || 'Brak'}}</p>
+      <p><b>Status:</b> {{task.status}}</p>
+      <p><b>Priorytet:</b> {{task.priority}}</p>
+      <p><b>Termin:</b> {{task.deadline | date:'yyyy-MM-dd'}}</p>
+      <p><b>Kategoria:</b> {{task.categoryName || 'Brak'}}</p>
+    </mat-card-content>
+    <button mat-button routerLink="/tasks">Powrót</button>
+  </mat-card>
+</div>
+<ng-template #loading>
+  <p style="text-align:center;">Ładowanie...</p>
+</ng-template>

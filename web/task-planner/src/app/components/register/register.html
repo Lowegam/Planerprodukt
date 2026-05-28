@@ -1,1 +1,12 @@
-<p>register works!</p>
+<mat-card style="max-width:400px;margin:50px auto;padding:20px;">
+  <mat-card-title>Rejestracja</mat-card-title>
+  <mat-card-content>
+    <mat-form-field style="width:100%;"><mat-label>Nazwa użytkownika</mat-label><input matInput [(ngModel)]="username"></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Email</mat-label><input matInput [(ngModel)]="email"></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Hasło</mat-label><input matInput type="password" [(ngModel)]="password"></mat-form-field>
+    <p style="color:red;" *ngIf="error">{{error}}</p>
+    <p style="color:green;" *ngIf="success">{{success}}</p>
+    <button mat-raised-button color="primary" (click)="register()">Zarejestruj</button>
+    <p style="margin-top:15px;">Masz konto? <a routerLink="/login">Zaloguj się</a></p>
+  </mat-card-content>
+</mat-card>

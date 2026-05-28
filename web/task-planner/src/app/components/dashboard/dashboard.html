@@ -1,1 +1,26 @@
-<p>dashboard works!</p>
+<div style="padding:20px;">
+  <h2>Statystyki</h2>
+  <div *ngIf="stats">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <mat-card style="flex:1;min-width:300px;">
+        <mat-card-title>Zadania wg statusu</mat-card-title>
+        <mat-card-content>
+          <canvas id="statusChart" width="300" height="300"></canvas>
+        </mat-card-content>
+      </mat-card>
+      <mat-card style="flex:1;min-width:300px;">
+        <mat-card-title>Priorytety</mat-card-title>
+        <mat-card-content>
+          <canvas id="priorityChart" width="300" height="300"></canvas>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <mat-card style="margin-top:20px;">
+      <mat-card-title>Ukończono: {{stats.completionRate}}%</mat-card-title>
+      <mat-card-content>
+        <p>Łącznie zadań: {{stats.total}}</p>
+        <p>Nowe: {{stats.byStatus.new}} | W trakcie: {{stats.byStatus.inProgress}} | Wykonane: {{stats.byStatus.done}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
