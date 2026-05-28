@@ -1,0 +1,19 @@
+<div style="padding:20px;">
+  <h2>Statystyki</h2>
+  <div *ngIf="stats; else noData" style="display:flex;gap:20px;flex-wrap:wrap;">
+    <mat-card style="flex:1;min-width:300px;">
+      <mat-card-title>Zadania wg statusu</mat-card-title>
+      <mat-card-content><canvas id="statusChart"></canvas></mat-card-content>
+    </mat-card>
+    <mat-card style="flex:1;min-width:300px;">
+      <mat-card-title>Priorytety</mat-card-title>
+      <mat-card-content><canvas id="priorityChart"></canvas></mat-card-content>
+    </mat-card>
+    <mat-card style="width:100%;">
+      <mat-card-title>Ukończono: {{stats.completionRate}}%</mat-card-title>
+    </mat-card>
+  </div>
+  <ng-template #noData>
+    <p>Brak danych do wyświetlenia.</p>
+  </ng-template>
+</div>
