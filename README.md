@@ -23,33 +23,20 @@ System umożliwia zarządzanie zadaniami na trzech platformach: webowej, desktop
 - Widok "Zadania na dziś" (mobile)
 - Testy jednostkowe (xUnit)
 
-## Struktura projektu
-Planerprodukt/
-├── backend/ # ASP.NET Core Web API
-│ └── PlanerproduktAPI/
-├── web/ # Aplikacja Angular
-│ └── task-planner/
-├── desktop/ # Aplikacja WPF
-│ └── TaskPlannerDesktop/
-├── mobile/ # Aplikacja .NET MAUI
-│ └── TaskPlannerMobile/
-├── docs/ # Dokumentacja
-└── .github/workflows/ # CI/CD
-
 ## Uruchomienie
 
 ### Backend
 
-bash
-cd backend/PlanerproduktAPI
-dotnet run
-Swagger dostępny pod adresem: http://localhost:5056/swagger
+- bash
+- cd backend/PlanerproduktAPI
+- dotnet run
+- Swagger dostępny pod adresem: http://localhost:5056/swagger
 
 ## Aplikacja Webowa 
-cd web/task-planner
-npm install
-ng serve
-Strona dostępna pod adresem: http://localhost:4200
+- cd web/task-planner
+- npm install
+- ng serve
+- Strona dostępna pod adresem: http://localhost:4200
 
 ## Aplikacja desktopowa
 - Otwórz desktop/TaskPlannerDesktop.sln w Visual Studio
@@ -64,15 +51,15 @@ Strona dostępna pod adresem: http://localhost:4200
 - Zarejestruj się lub zaloguj
 
 ## Testy
-Testy jednostkowe znajdują się w projekcie PlanerproduktAPI.Tests.
-cd backend
-dotnet test
+- Testy jednostkowe znajdują się w projekcie PlanerproduktAPI.Tests.
+- cd backend
+- dotnet test
 
 ## CI/CD
-Projekt posiada konfigurację GitHub Actions (.github/workflows/main.yml), która automatycznie buduje i testuje backend przy każdym pushu.
+- Projekt posiada konfigurację GitHub Actions (.github/workflows/main.yml), która automatycznie buduje i testuje backend przy każdym pushu.
 
-Autor
-Radosław Gapiński 
+## Autor
+## Radosław Gapiński 
 
-Wersja
-v1.0 – 28 maja 2026
+## Wersja
+## v1.0 – 28 maja 2026
