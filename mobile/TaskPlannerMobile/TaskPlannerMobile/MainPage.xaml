@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskPlannerMobile.MainPage"
+             Title="Planer Produktywności">
+    <Grid Padding="15" RowDefinitions="Auto,Auto,*">
+        <Label x:Name="LblWelcome" Text="Zadania" FontSize="24" FontAttributes="Bold" Margin="0,10,0,5"/>
+        <HorizontalStackLayout Grid.Row="1" Spacing="10" Margin="0,0,0,10">
+            <Button Text="+ Dodaj" Clicked="BtnAdd_Clicked" WidthRequest="80"/>
+            <Button Text="Odśwież" Clicked="BtnRefresh_Clicked" WidthRequest="80"/>
+            <Button Text="Dziś" Clicked="BtnToday_Clicked" WidthRequest="60"/>
+        </HorizontalStackLayout>
+        <CollectionView x:Name="CvTasks" Grid.Row="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="✅ Wykonane" BackgroundColor="Green" Invoked="SwipeDone"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="🗑 Usuń" BackgroundColor="Red" Invoked="SwipeDelete"/>
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Frame Margin="0,5" Padding="12" BorderColor="#ccc" CornerRadius="8">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding title}" FontSize="16" FontAttributes="Bold"/>
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding status}" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="{Binding priority}" FontSize="12" TextColor="Gray"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label x:Name="LblStatus" Grid.Row="3" Text="" FontSize="11" TextColor="Gray" Margin="0,5"/>
+    </Grid>
+</ContentPage>

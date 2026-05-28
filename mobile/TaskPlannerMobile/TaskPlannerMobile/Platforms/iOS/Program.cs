@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MauiApp1
+namespace TaskPlannerMobile
 {
     public class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace MauiApp1
+﻿namespace TaskPlannerMobile
 {
     public partial class AppShell : Shell
     {

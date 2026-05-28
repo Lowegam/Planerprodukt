@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskPlannerMobile.LoginPage"
+             Title="Logowanie"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout Padding="30" VerticalOptions="Center" Spacing="15">
+        <Label Text="Planer Produktywności" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Label Text="Zaloguj się" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,20"/>
+        <Entry x:Name="TxtUsername" Placeholder="Nazwa użytkownika" FontSize="16"/>
+        <Entry x:Name="TxtPassword" Placeholder="Hasło" IsPassword="True" FontSize="16"/>
+        <Button Text="Zaloguj" Clicked="BtnLogin_Clicked" FontSize="16" HeightRequest="50"/>
+        <Button Text="Zarejestruj" Clicked="BtnRegister_Clicked" FontSize="14" BackgroundColor="Gray"/>
+        <Label x:Name="LblError" TextColor="Red" HorizontalOptions="Center"/>
+        <ActivityIndicator x:Name="Loading" IsVisible="False" IsRunning="True"/>
+    </VerticalStackLayout>
+</ContentPage>
