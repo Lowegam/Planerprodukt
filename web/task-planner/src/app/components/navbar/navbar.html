@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" *ngIf="auth.isLoggedIn()">
+  <span>Planer</span><span style="flex:1 1 auto;"></span>
+  <button mat-button routerLink="/tasks">Zadania</button>
+  <button mat-button routerLink="/dashboard">Statystyki</button>
+  <button mat-button (click)="logout()">Wyloguj</button>
+</mat-toolbar>

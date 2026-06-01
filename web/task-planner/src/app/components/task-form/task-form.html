@@ -1,0 +1,12 @@
+<mat-card style="max-width:500px;margin:30px auto;padding:20px;">
+  <mat-card-title>{{edit?'Edytuj':'Nowe'}} zadanie</mat-card-title>
+  <mat-card-content>
+    <mat-form-field style="width:100%;"><mat-label>Tytuł</mat-label><input matInput [(ngModel)]="t.title"></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Opis</mat-label><textarea matInput [(ngModel)]="t.description"></textarea></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Status</mat-label><mat-select [(ngModel)]="t.status"><mat-option value="New">Nowe</mat-option><mat-option value="InProgress">W trakcie</mat-option><mat-option value="Done">Wykonane</mat-option></mat-select></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Priorytet</mat-label><mat-select [(ngModel)]="t.priority"><mat-option value="Low">Niski</mat-option><mat-option value="Medium">Średni</mat-option><mat-option value="High">Wysoki</mat-option></mat-select></mat-form-field>
+    <mat-form-field style="width:100%;"><mat-label>Termin</mat-label><input matInput [matDatepicker]="p" [(ngModel)]="t.deadline"><mat-datepicker-toggle matSuffix [for]="p"></mat-datepicker-toggle><mat-datepicker #p></mat-datepicker></mat-form-field>
+    <button mat-raised-button color="primary" (click)="save()">Zapisz</button>
+    <button mat-button routerLink="/tasks">Anuluj</button>
+  </mat-card-content>
+</mat-card>

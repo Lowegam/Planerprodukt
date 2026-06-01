@@ -1,0 +1,8 @@
+<mat-card *ngIf="task" style="max-width:500px;margin:30px auto;padding:20px;">
+  <mat-card-title>{{task.title}}</mat-card-title>
+  <mat-card-content>
+    <p><b>Opis:</b> {{task.description||'Brak'}}</p><p><b>Status:</b> {{task.status}}</p>
+    <p><b>Priorytet:</b> {{task.priority}}</p><p><b>Termin:</b> {{task.deadline|date:'yyyy-MM-dd'}}</p>
+  </mat-card-content>
+  <button mat-button routerLink="/tasks">Powrót</button>
+</mat-card>

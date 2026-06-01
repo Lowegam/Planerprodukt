@@ -1,0 +1,8 @@
+<div style="padding:20px;">
+  <h2>Statystyki</h2>
+  <div *ngIf="stats"><div style="display:flex;gap:20px;">
+    <mat-card style="flex:1;"><mat-card-title>Statusy</mat-card-title><mat-card-content><canvas id="sc" width="300" height="250"></canvas></mat-card-content></mat-card>
+    <mat-card style="flex:1;"><mat-card-title>Priorytety</mat-card-title><mat-card-content><canvas id="pc" width="300" height="250"></canvas></mat-card-content></mat-card>
+  </div>
+  <mat-card style="margin-top:20px;"><mat-card-title>Ukończono: {{stats.completionRate}}%</mat-card-title></mat-card></div>
+</div>
