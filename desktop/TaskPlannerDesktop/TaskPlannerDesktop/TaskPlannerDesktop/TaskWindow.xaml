@@ -1,0 +1,38 @@
+﻿<Window x:Class="TaskPlannerDesktop.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Zadanie" Height="380" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Tytuł"/>
+        <TextBox x:Name="TxtTitle" Grid.Row="1" Margin="0,5"/>
+        <TextBlock Text="Opis" Grid.Row="2"/>
+        <TextBox x:Name="TxtDesc" Grid.Row="3" Margin="0,5" Height="50"/>
+        <TextBlock Text="Status" Grid.Row="4"/>
+        <ComboBox x:Name="CmbStatus" Grid.Row="5" Margin="0,5" SelectedIndex="0">
+            <ComboBoxItem Tag="New">Nowe</ComboBoxItem>
+            <ComboBoxItem Tag="InProgress">W trakcie</ComboBoxItem>
+            <ComboBoxItem Tag="Done">Wykonane</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Text="Priorytet" Grid.Row="6"/>
+        <ComboBox x:Name="CmbPriority" Grid.Row="7" Margin="0,5" SelectedIndex="1">
+            <ComboBoxItem Tag="Low">Niski</ComboBoxItem>
+            <ComboBoxItem Tag="Medium">Średni</ComboBoxItem>
+            <ComboBoxItem Tag="High">Wysoki</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+            <Button Content="Zapisz" Width="80" Click="BtnSave_Click"/>
+            <Button Content="Anuluj" Width="80" Margin="10,0,0,0" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
